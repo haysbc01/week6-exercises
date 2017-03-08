@@ -1,41 +1,33 @@
 console.log('JS: Problem Set #4');
 
-var addNumbers = function (string){
-  var arrays = string.split('');
-  console.log(arrays)
-  var numbers = []
-  for (var i = 0; i < arrays.length; i++){
-    //console.log(isNaN(arrays[i]))
-    if(isNaN(arrays[i]) == false){
-      //console.log(arrays[i])
-      if(isNaN(arrays[i] + arrays[i+1])){
-        var joined = arrays[i];
-        //console.log (joined);
-      }else{
-        console.log(arrays[i]+arrays[i+1])
-      }
-
-    }
-    // console.log(parseFloat(arrays[i]))
-    // var parsed = parseFloat(arrays[i])
-    // console.log(parsed);
-
-      // if(arrays[i] == 1 ||
-      //   arrays[i] == 2 ||
-      //   arrays[i] == 3 ||
-      //   arrays[i] == 4 ||
-      //   arrays[i] == 5 ||
-      //   arrays[i] == 6 ||
-      //   arrays[i] == 7 ||
-      //   arrays[i] == 8 ||
-      //   arrays[i] == 9){
-      //     if()
-      //   //numbers.push(arrays[i]);
-      //   console.log(arrays[i]);
-      // }
-    }
+var number = function (num){
+  if (typeof (parseInt(num)) == 'number' && isNaN(parseInt(num)) == false && isFinite (parseInt(num)) == true){
+    return num
   }
+}
 
+var addNumbers = function (string){
+
+var numbers = [];
+
+  for (var i = 0; i < string.length; i++){
+
+    if(number(string[i]) == string[i]){
+      numbers.push(string[i])
+
+      var x = i+1;
+      while(string[x] == number(string[x])){
+        numbers[numbers.length - 1] += string[x];
+        x++;
+      }
+      i = x;
+    }
+
+  } for (var a = 0 ; a < numbers.length ; a ++){
+    var numbers = parseInt(numbers[a]) + parseInt(numbers[a+1])
+    return numbers
+  }
+  }
 
 
 console.log(addNumbers("88Hello 3World"));
